@@ -112,7 +112,7 @@ $ rotten-reviews venom_2018 2
 ## Roadmap
 
 - [x] Scrape defined number of reviews instead of pages ([#6](https://github.com/grikomsn/rotten-reviews/pull/6), soon on `v1.1.0`)
-- [ ] Error handling if movie page doesn't exist
+- [x] Error handling if movie page doesn't exist ([#2](https://github.com/grikomsn/rotten-reviews/pull/2), soon on `v1.1.0`)
 - [ ] Include scraping TV series reviews
 
 ## Credits
