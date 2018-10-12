@@ -91,7 +91,7 @@ $ rotten-reviews venom_2018 2
 
   // get using the getAudienceReviews function
   RottenReviews.getAudienceReviews(movieSlug, numOfReviews).then(reviews => {
-    console.log(JSON.stringify(reviews, null, 4))
+    console.log(JSON.stringify(reviews, null, 2))
   })
   ```
 
@@ -99,19 +99,19 @@ $ rotten-reviews venom_2018 2
 
   ```json
   [
-      {
-          "reviewer": "Melissa B",
-          "date": "October 11, 2018",
-          "stars": 5,
-          "review": "I loved it! Didn't expect to like it as much as I did.Some really funny parts and amazing action scenes. Ignore the critics, go see it!"
-      },
-      ...
+    {
+      "reviewer": "Melissa B",
+      "date": "October 11, 2018",
+      "stars": 5,
+      "review": "I loved it! Didn't expect to like it as much as I did.Some really funny parts and amazing action scenes. Ignore the critics, go see it!"
+    },
+    ...
   ]
   ```
 
 ## Roadmap
 
-- [x] Scrape defined number of reviews instead of pages
+- [x] Scrape defined number of reviews instead of pages ([#6](https://github.com/grikomsn/rotten-reviews/pull/6), soon on `v1.1.0`)
 - [ ] Error handling if movie page doesn't exist
 - [ ] Include scraping TV series reviews
 
