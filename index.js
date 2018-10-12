@@ -1,10 +1,13 @@
 const Axios = require('axios').default
 const cheerio = require('cheerio')
 
+const reviewsPerPage = 20;
 module.exports = {
-  getAudienceReviews: (slug, pages) => {
+  getAudienceReviews: (slug, count) => {
     const movieUrl = (slug, pages) =>
       `https://www.rottentomatoes.com/m/${slug}/reviews/?page=${pages}&type=user&sort=`
+
+    const pages = Math.ceil(count/reviewsPerPage);
 
     return new Promise(resolve => {
       const pageRequests = []
@@ -20,7 +23,7 @@ module.exports = {
           requests.forEach(request => {
             reviews.push.apply(reviews, module.exports.scrapePage(request.data))
           })
-          return reviews
+          return reviews.slice(0, count);
         })
       )
   },
