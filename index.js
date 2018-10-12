@@ -14,6 +14,15 @@ module.exports = {
       resolve(pageRequests)
     })
       .then(pageRequests => Axios.all(pageRequests))
+      .catch(error => {
+        if (error.response.status == 404)
+          return Promise.reject({
+            status: 404,
+            message:
+              `⚠️  Page not found for '${slug}'. You can check the page manually by opening this link:\n` +
+              movieUrl(slug, 1),
+          })
+      })
       .then(
         Axios.spread((...requests) => {
           const reviews = []

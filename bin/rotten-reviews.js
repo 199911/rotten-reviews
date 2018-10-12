@@ -12,17 +12,15 @@ Commander.description('scrapes audience movie reviews from rotten tomatoes')
   .option('--csv', 'exports to csv (defaults to json)')
   .arguments('<movie> <pages>')
   .action((movie, pages) => {
-    RottenReviews.getAudienceReviews(movie, pages).then(reviews => {
-      console.log(
-        Commander.csv ? Csv.parse(reviews) : JSON.stringify(reviews, null, 2)
-      )
-    })
-    .catch(error => {
-      const { response: { status } } = error
-      if (status == 404 ) {
-        console.log(`Cannot find review of ${movie}`);
-      }
-    })
+    RottenReviews.getAudienceReviews(movie, pages)
+      .then(reviews => {
+        console.log(
+          Commander.csv ? Csv.parse(reviews) : JSON.stringify(reviews, null, 2)
+        )
+      })
+      .catch(error => {
+        console.error(error.message)
+      })
   })
   .parse(process.argv)
 
