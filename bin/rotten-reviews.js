@@ -12,11 +12,12 @@ Commander.description('scrapes audience movie reviews from rotten tomatoes')
   .option('--csv', 'exports to csv (defaults to json)')
   .arguments('<movie> <count>')
   .action((movie, count) => {
-    RottenReviews.getAudienceReviews(movie, count).then(reviews => {
-      console.log(
-        Commander.csv ? Csv.parse(reviews) : JSON.stringify(reviews, null, 2)
-      )
-    })
+    RottenReviews.getAudienceReviews(movie, count)
+      .then(reviews => {
+        console.log(
+          Commander.csv ? Csv.parse(reviews) : JSON.stringify(reviews, null, 2)
+        )
+      })
       .catch(error => {
         console.error(error.message)
       })
