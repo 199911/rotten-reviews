@@ -1,0 +1,26 @@
+{
+  "name": "rotten-reviews",
+  "description": "Scrape audience reviews from Rotten Tomatoes 🍅",
+  "version": "1.0.0",
+  "author": {
+    "name": "Griko Nibras",
+    "email": "grikomsn@gmail.com",
+    "url": "https://griko.id"
+  },
+  "homepage": "https://github.com/grikomsn/rotten-reviews",
+  "repository": {
+    "type": "url",
+    "url": "https://github.com/grikomsn/rotten-reviews.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "commander": "^2.19.0",
+    "json2csv": "^4.2.1"
+  },
+  "bin": {
+    "rotten-reviews": "./bin/rotten-reviews.js"
+  },
+  "main": "index.js"
+}
