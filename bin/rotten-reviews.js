@@ -17,6 +17,12 @@ Commander.description('scrapes audience movie reviews from rotten tomatoes')
         Commander.csv ? Csv.parse(reviews) : JSON.stringify(reviews, null, 2)
       )
     })
+    .catch(error => {
+      const { response: { status } } = error
+      if (status == 404 ) {
+        console.log(`Cannot find review of ${movie}`);
+      }
+    })
   })
   .parse(process.argv)
 
