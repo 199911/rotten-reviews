@@ -10,8 +10,7 @@ Scrape audience reviews from [Rotten Tomatoes](https://www.rottentomatoes.com) ð
 
 ## Description
 
-This Node.js scrapes Rotten Tomatoes audience reviews pages and scrapes the
-contents by getting the reviewer name, date, total stars, and review excerpt.
+This Node.js package scrapes [Rotten Tomatoes](https://www.rottentomatoes.com) audience reviews pages and scrapes the contents by getting the reviewer name, date, total stars, and review excerpt.
 
 Future features are listed on the [roadmap](#roadmap).
 
