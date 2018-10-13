@@ -41,7 +41,7 @@ Options:
 # install using npm
 npm -g i rotten-reviews
 
-# install using npm
+# install using yarn
 yarn global add rotten-reviews
 ```
 
@@ -73,7 +73,7 @@ $ rotten-reviews venom_2018 2
   # install using npm
   npm i rotten-reviews
 
-  # install using npm
+  # install using yarn
   yarn add rotten-reviews
   ```
 
